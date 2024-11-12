@@ -1,8 +1,9 @@
+import { useCities } from "../../hooks/CityContext";
 import CountryItem from "./CountryItem";
 import styles from "./CountryList.module.css";
 
-function CountryList({ cities, isLoading }) {
-  console.log(cities);
+function CountryList() {
+  const { cities, isLoading } = useCities();
 
   const uniqueCountries = [];
 

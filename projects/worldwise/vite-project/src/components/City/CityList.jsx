@@ -1,7 +1,10 @@
+import { useCities } from "../../hooks/CityContext";
 import CityItem from "./CityItem";
 import styles from "./CityList.module.css";
 
-function CityList({ cities, isLoading }) {
+function CityList() {
+  const { cities, isLoading } = useCities();
+
   if (isLoading) return <p>Loading.......</p>;
 
   return (

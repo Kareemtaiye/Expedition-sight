@@ -1,5 +1,14 @@
 import { Link } from "react-router-dom";
 import styles from "./CityItem.module.css";
+
+export function convertToEmoji(countryCode) {
+  const codePoints = countryCode
+    .toUpperCase()
+    .split("")
+    .map((char) => 127397 + char.charCodeAt());
+  return String.fromCodePoint(...codePoints);
+}
+
 const formatDate = (date) =>
   new Intl.DateTimeFormat("en", {
     day: "numeric",
